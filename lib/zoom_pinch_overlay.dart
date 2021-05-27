@@ -42,9 +42,13 @@ class ZoomOverlay extends StatefulWidget {
   final Widget child;
   final double? minScale;
   final double? maxScale;
-
+  final bool twoTouchOnly;
   const ZoomOverlay(
-      {Key? key, required this.child, this.minScale, this.maxScale})
+      {Key? key,
+      this.twoTouchOnly = false,
+      required this.child,
+      this.minScale,
+      this.maxScale})
       : super(key: key);
 
   @override
@@ -59,6 +63,7 @@ class _ZoomOverlayState extends State<ZoomOverlay>
   late AnimationController _controllerReset;
   OverlayEntry? _overlayEntry;
   bool _isZooming = false;
+  int _touchCount = 0;
   Matrix4 _transformMatrix = Matrix4.identity();
 
   final _transformWidget = GlobalKey<_TransformWidgetState>();
@@ -89,16 +94,21 @@ class _ZoomOverlayState extends State<ZoomOverlay>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onScaleStart: onScaleStart,
-        onScaleUpdate: onScaleUpdate,
-        onScaleEnd: onScaleEnd,
-        child: Opacity(opacity: _isZooming ? 0 : 1, child: widget.child));
+    return Listener(
+      onPointerDown: _incrementEnter,
+      onPointerUp: _incrementExit,
+      child: GestureDetector(
+          onScaleStart: onScaleStart,
+          onScaleUpdate: onScaleUpdate,
+          onScaleEnd: onScaleEnd,
+          child: Opacity(opacity: _isZooming ? 0 : 1, child: widget.child)),
+    );
   }
 
   void onScaleStart(ScaleStartDetails details) {
     //Dont start the effect if the image havent reset complete.
     if (_controllerReset.isAnimating) return;
+    if (widget.twoTouchOnly && _touchCount < 2) return;
     _startFocalPoint = details.focalPoint;
 
     _matrix = Matrix4.identity();
@@ -186,4 +196,8 @@ class _ZoomOverlayState extends State<ZoomOverlay>
     _overlayEntry?.remove();
     _overlayEntry = null;
   }
+
+  void _incrementEnter(PointerEvent details) => _touchCount++;
+
+  void _incrementExit(PointerEvent details) => _touchCount--;
 }
