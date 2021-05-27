@@ -6,18 +6,18 @@ import 'package:vector_math/vector_math_64.dart';
 //
 // Transform widget enables the overlay to be updated dynamically
 //
-class TransformWidget extends StatefulWidget {
+class _TransformWidget extends StatefulWidget {
   final Widget child;
   final Matrix4 matrix;
 
-  const TransformWidget({Key? key, required this.child, required this.matrix})
+  const _TransformWidget({Key? key, required this.child, required this.matrix})
       : super(key: key);
 
   @override
   _TransformWidgetState createState() => _TransformWidgetState();
 }
 
-class _TransformWidgetState extends State<TransformWidget> {
+class _TransformWidgetState extends State<_TransformWidget> {
   Matrix4? _matrix = Matrix4.identity();
 
   @override
@@ -35,14 +35,23 @@ class _TransformWidgetState extends State<TransformWidget> {
   }
 }
 
-//
-// ZoomOverlay enables a image to have full screen drag, pinch and zoom
-//
+///
+/// The main widget that allows a widget to pinch and zoom on top of current context
+/// by inserting a [OverlayEntry].
+///
 class ZoomOverlay extends StatefulWidget {
+  /// A widget to make zoomable.
   final Widget child;
+
+  ///  Specifies the minimum multiplier it can scale outwards.
   final double? minScale;
+
+  ///  Specifies the maximum multiplier the user can zoom inwards.
   final double? maxScale;
+
+  /// Specifies wither the zoom is enabled only with two fingers on the screen. Defaults to false.
   final bool twoTouchOnly;
+
   const ZoomOverlay(
       {Key? key,
       this.twoTouchOnly = false,
@@ -170,7 +179,7 @@ class _ZoomOverlayState extends State<ZoomOverlay>
     return IgnorePointer(
       child: Stack(
         children: [
-          TransformWidget(
+          _TransformWidget(
             key: _transformWidget,
             matrix: _transformMatrix,
             child: widget.child,
