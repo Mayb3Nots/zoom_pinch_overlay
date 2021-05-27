@@ -1,5 +1,10 @@
 
-## 1.0.1
+## 1.1.0.
+-Added example app.
+-Updated readme video
+## 1.0.2
+Fixed some readme mistakes again...
+## 1.0.2
 Fixed some readme mistakes.
 ## 1.0.1
 Added documentation and updated readme.
