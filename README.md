@@ -1,8 +1,9 @@
 # zoom_pinch_overlay
+<img src="https://forthebadge.com/images/badges/built-with-love.svg" height="28px" />&nbsp;&nbsp;<img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" height="28px" />&nbsp;&nbsp;<a href="https://pub.dev/packages/google_nav_bar"><img src="https://img.shields.io/pub/v/google_nav_bar.svg?style=for-the-badge" height="28px" /></a>
 
 An instagram style pinch and zoom widget for all platform completely written in pure dart!
 
-<iframe src="https://giphy.com/embed/c121HTJtdhWGpsE1Sr" width="234" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/c121HTJtdhWGpsE1Sr">via GIPHY</a></p>
+![](https://giphy.com/gifs/gNSbI6IlqtZASEFkN4)
 
 All other "zoom_pinch" package doesnt didnt work for me because it doesnt appear on top of all other widgets which 
 was an issue to one of my projects. This package solves that problem by introducing a OverlayEntry so that it appears on top
