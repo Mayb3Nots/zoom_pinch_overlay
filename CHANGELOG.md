@@ -1,3 +1,5 @@
+## 1.1.2
+-Updated readme
 ## 1.1.1
 -Added `animationDuration` as a property. 
 ## 1.1.0.

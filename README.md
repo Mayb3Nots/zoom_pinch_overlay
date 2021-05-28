@@ -9,7 +9,7 @@ All other "zoom_pinch" package doesnt didnt work for me because it doesnt appear
 was an issue to one of my projects. This package solves that problem by introducing a OverlayEntry so that it appears on top
 of all other widgets.
 
-Credit to [@billylev](https://github.com/billylev) for creating this package.
+Credit to [@billylev](https://github.com/billylev) for the contribution this package.
 
 ## Getting Started
 
@@ -22,7 +22,6 @@ ZoomOverlay(
     minScale: 0.5, // Optional
     maxScale: 3.0, // Optional
     twoTouchOnly: true, // Defaults to false
-    animationDuration: Duration(seconds: 1), // Defaults to Duration(milliseconds: 100)
     child: CachedNetworkImage(
         imageUrl: imageUrl,
     ),
