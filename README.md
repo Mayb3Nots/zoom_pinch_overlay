@@ -19,9 +19,10 @@ This is the values used in the video which can be found in the example folder.
 
 ``` dart
 ZoomOverlay(
-    minScale: 0.5, // optional
-    maxScale: 3.0, // optional
-    twoTouchOnly: true,
+    minScale: 0.5, // Optional
+    maxScale: 3.0, // Optional
+    twoTouchOnly: true, // Defaults to false
+    animationDuration: Duration(seconds: 1), // Defaults to Duration(milliseconds: 100)
     child: CachedNetworkImage(
         imageUrl: imageUrl,
     ),
@@ -31,10 +32,11 @@ ZoomOverlay(
 
 |parameter  |documentation  |
 |---------|---------|
-|`minScale`|specifies the minimum multiplier it can scale outwards.|
-|`maxScale`|specifies the maximum multiplier the user can zoom inwards.|
+|`minScale`|Specifies the minimum multiplier it can scale outwards.|
+|`maxScale`|Specifies the maximum multiplier the user can zoom inwards.|
 |`twoTouchOnly`|specifies wither the zoom is enabled only with two fingers on the screen. Defaults to `false`.|
 |`child`| A widget to make zoomable.|
+|`animationDuration`| Specifies the duration when the zoom has ended and is animating back to it's original place. Defaults to `Duration(milliseconds: 100)`|
 
 
 ## Medium blog post
