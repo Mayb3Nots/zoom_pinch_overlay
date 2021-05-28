@@ -52,12 +52,16 @@ class ZoomOverlay extends StatefulWidget {
   /// Specifies wither the zoom is enabled only with two fingers on the screen. Defaults to false.
   final bool twoTouchOnly;
 
+  /// Specifies the animation duartion when the widget zoom has ended and is animating back to the original place.
+  final Duration animationDuration;
+
   const ZoomOverlay(
       {Key? key,
       this.twoTouchOnly = false,
       required this.child,
       this.minScale,
-      this.maxScale})
+      this.maxScale,
+      this.animationDuration = const Duration(milliseconds: 100)})
       : super(key: key);
 
   @override
@@ -82,16 +86,14 @@ class _ZoomOverlayState extends State<ZoomOverlay>
     super.initState();
 
     _controllerReset =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 100));
+        AnimationController(vsync: this, duration: widget.animationDuration);
 
     _controllerReset.addListener(() {
       _transformWidget.currentState!.setMatrix(_animationReset.value);
     });
 
     _controllerReset.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        hide();
-      }
+      if (status == AnimationStatus.completed) hide();
     });
   }
 
