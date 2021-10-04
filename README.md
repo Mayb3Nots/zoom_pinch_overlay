@@ -1,5 +1,6 @@
 # zoom_pinch_overlay
-<img src="https://forthebadge.com/images/badges/built-with-love.svg" height="28px" />&nbsp;&nbsp;<img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" height="28px" />&nbsp;&nbsp;<a href="https://pub.dev/packages/zoom_pinch_overlay"><img src="https://img.shields.io/pub/v/zoom_pinch_overlay.svg?style=for-the-badge" height="28px" /></a>
+<img src="https://forthebadge.com/images/badges/built-with-love.svg" height="28px" />&nbsp;&nbsp;<img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" height="28px" />&nbsp;&nbsp;<a href="https://pub.dev/packages/zoom_pinch_overlay"><img src="https://img.shields.io/pub/v/zoom_pinch_overlay.svg?style=for-the-badge" height="28px" /></a></a>
+<a href="https://www.buymeacoffee.com/samuelong" target="_blank"><img src="https://i.imgur.com/aV6DDA7.png" alt="Buy Me A Coffee" style="height: 30px !important;width: 150px !important; box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" > </a>
 
 An instagram style pinch and zoom widget for all platform completely written in pure dart!
 
