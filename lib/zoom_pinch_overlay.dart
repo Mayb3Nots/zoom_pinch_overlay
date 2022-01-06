@@ -108,6 +108,7 @@ class _ZoomOverlayState extends State<ZoomOverlay>
     return Listener(
       onPointerDown: _incrementEnter,
       onPointerUp: _incrementExit,
+      onPointerCancel: _incrementExit,
       child: GestureDetector(
           onScaleStart: onScaleStart,
           onScaleUpdate: onScaleUpdate,
