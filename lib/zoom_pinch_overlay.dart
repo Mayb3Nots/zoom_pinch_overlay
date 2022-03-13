@@ -65,7 +65,7 @@ class ZoomOverlay extends StatefulWidget {
       this.minScale,
       this.maxScale,
       this.animationDuration = const Duration(milliseconds: 100),
-      this.animationCurve})
+      this.animationCurve = Curves.fastOutSlowIn})
       : super(key: key);
 
   @override
