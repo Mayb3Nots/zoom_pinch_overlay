@@ -37,6 +37,10 @@ dev_dependencies:
   zoom_pinch_overlay:
     path: ../
 
+dependency_overrides:
+  platform: ^3.1.0
+
+
 # The following section is specific to Flutter.
 flutter:
 

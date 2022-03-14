@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:vector_math/vector_math_64.dart';
@@ -177,8 +176,8 @@ class _ZoomOverlayState extends State<ZoomOverlay>
   void onScaleEnd(ScaleEndDetails details) {
     if (!_isZooming || _controllerReset.isAnimating) return;
     _animationReset = Matrix4Tween(begin: _matrix, end: Matrix4.identity())
-        .animate(
-            CurvedAnimation(parent: _controllerReset, curve: widget.animationCurve));
+        .animate(CurvedAnimation(
+            parent: _controllerReset, curve: widget.animationCurve));
     _controllerReset.reset();
     _controllerReset.forward();
   }

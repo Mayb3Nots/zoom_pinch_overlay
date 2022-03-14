@@ -1,3 +1,6 @@
+## 1.2.0
+-Updated example app
+-Added reset animation curves parameter
 ## 1.1.2
 -Updated readme
 ## 1.1.1

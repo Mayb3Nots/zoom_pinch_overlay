@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zoom_pinch_overlay/zoom_pinch_overlay.dart';
@@ -110,14 +111,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            brightness: Brightness.light,
             backgroundColor: Colors.white,
             centerTitle: false,
             title: Text('Instagram',
                 style: GoogleFonts.cookie(
                     fontStyle: FontStyle.italic,
                     color: Colors.black87,
-                    fontSize: 38))),
+                    fontSize: 38)),
+            systemOverlayStyle: SystemUiOverlayStyle.dark),
         body: ListView(
           children: <Widget>[
             listRow(1027, 1062, 36, 'mary.porter',
