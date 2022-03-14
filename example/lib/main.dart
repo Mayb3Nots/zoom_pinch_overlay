@@ -50,6 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
               minScale: 0.5, // optional
               maxScale: 3.0, // optional
               twoTouchOnly: true,
+              animationDuration: Duration(milliseconds: 300),
               child: CachedNetworkImage(
                   imageUrl: 'https://picsum.photos/800?image=$image')),
           Padding(
