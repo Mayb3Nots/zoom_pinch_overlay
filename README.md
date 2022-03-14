@@ -22,6 +22,8 @@ This is the values used in the video which can be found in the example folder.
 ZoomOverlay(
     minScale: 0.5, // Optional
     maxScale: 3.0, // Optional
+    animationCurve: Curves.fastOutSlowIn, // Defaults to fastOutSlowIn which mimics IOS instagram behavior
+    animationDuration: Duration(milliseconds: 300), // Defaults to 100 Milliseconds. Recommended duration is 300 milliseconds for Curves.fastOutSlowIn
     twoTouchOnly: true, // Defaults to false
     child: CachedNetworkImage(
         imageUrl: imageUrl,
@@ -37,6 +39,7 @@ ZoomOverlay(
 |`twoTouchOnly`|specifies wither the zoom is enabled only with two fingers on the screen. Defaults to `false`.|
 |`child`| A widget to make zoomable.|
 |`animationDuration`| Specifies the duration when the zoom has ended and is animating back to it's original place. Defaults to `Duration(milliseconds: 100)`|
+|`animationCurve`| Specifies the curve when the zoom has ended and is animating back to it's original place. Defaults to `Curves.fastOutSlowIn`|
 
 
 ## Medium blog post
