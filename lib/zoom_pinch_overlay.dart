@@ -55,13 +55,17 @@ class ZoomOverlay extends StatefulWidget {
   /// Specifies the animation duartion when the widget zoom has ended and is animating back to the original place.
   final Duration animationDuration;
 
+  /// Specifies the animation curve when the widget zoom has ended and is animating back to the original place.
+  final Curve animationCurve;
+
   const ZoomOverlay(
       {Key? key,
       this.twoTouchOnly = false,
       required this.child,
       this.minScale,
       this.maxScale,
-      this.animationDuration = const Duration(milliseconds: 100)})
+      this.animationDuration = const Duration(milliseconds: 100),
+      this.animationCurve = Curves.fastOutSlowIn})
       : super(key: key);
 
   @override
@@ -173,7 +177,8 @@ class _ZoomOverlayState extends State<ZoomOverlay>
   void onScaleEnd(ScaleEndDetails details) {
     if (!_isZooming || _controllerReset.isAnimating) return;
     _animationReset = Matrix4Tween(begin: _matrix, end: Matrix4.identity())
-        .animate(_controllerReset);
+        .animate(
+            CurvedAnimation(parent: _controllerReset, curve: widget.animationCurve));
     _controllerReset.reset();
     _controllerReset.forward();
   }
