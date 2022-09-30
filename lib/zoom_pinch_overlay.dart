@@ -57,15 +57,19 @@ class ZoomOverlay extends StatefulWidget {
   /// Specifies the animation curve when the widget zoom has ended and is animating back to the original place.
   final Curve animationCurve;
 
-  const ZoomOverlay(
-      {Key? key,
-      this.twoTouchOnly = false,
-      required this.child,
-      this.minScale,
-      this.maxScale,
-      this.animationDuration = const Duration(milliseconds: 100),
-      this.animationCurve = Curves.fastOutSlowIn})
-      : super(key: key);
+  /// Specifies the color of the modal barrier that shows in the background.
+  final Color? modalBarrierColor;
+
+  const ZoomOverlay({
+    Key? key,
+    this.twoTouchOnly = false,
+    required this.child,
+    this.minScale,
+    this.maxScale,
+    this.animationDuration = const Duration(milliseconds: 100),
+    this.animationCurve = Curves.fastOutSlowIn,
+    this.modalBarrierColor,
+  }) : super(key: key);
 
   @override
   _ZoomOverlayState createState() => _ZoomOverlayState();
@@ -186,6 +190,9 @@ class _ZoomOverlayState extends State<ZoomOverlay>
     return IgnorePointer(
       child: Stack(
         children: [
+          ModalBarrier(
+            color: widget.modalBarrierColor,
+          ),
           _TransformWidget(
             key: _transformWidget,
             matrix: _transformMatrix,
