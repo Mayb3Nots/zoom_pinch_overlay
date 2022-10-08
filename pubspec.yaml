@@ -1,6 +1,6 @@
 name: zoom_pinch_overlay
 description: An instagram style pinch and zoom widget that can be moved globally.
-version: 1.2.0
+version: 1.3.0
 homepage: https://github.com/Mayb3Nots/zoom_pinch_overlay
 
 environment:

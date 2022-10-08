@@ -47,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ]),
           ),
           ZoomOverlay(
+              modalBarrierColor: Colors.black12, // optional
               minScale: 0.5, // optional
               maxScale: 3.0, // optional
               twoTouchOnly: true,
