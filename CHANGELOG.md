@@ -1,26 +1,26 @@
 ## 1.3.0
 
--Added `modalBarrierColor` property to in order to add a custom background color when zoomed. Thanks @gonzalogauto!
--Updated dependencies
--Updated to flutter 3.3
+- Added `modalBarrierColor` property to in order to add a custom background color when zoomed. Thanks @gonzalogauto!
+- Updated dependencies
+- Updated to flutter 3.3
 
 ## 1.2.0
 
--Updated example app
--Added reset animation curves parameter
+- Updated example app
+- Added reset animation curves parameter
 
 ## 1.1.2
 
--Updated readme
+- Updated readme
 
 ## 1.1.1
 
--Added `animationDuration` as a property.
+- Added `animationDuration` as a property.
 
 ## 1.1.0.
 
--Added example app.
--Updated readme video
+- Added example app.
+- Updated readme video
 
 ## 1.0.2
 
