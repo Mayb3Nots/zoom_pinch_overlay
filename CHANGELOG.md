@@ -17,7 +17,7 @@
 
 - Added `animationDuration` as a property.
 
-## 1.1.0.
+## 1.1.0
 
 - Added example app.
 - Updated readme video
