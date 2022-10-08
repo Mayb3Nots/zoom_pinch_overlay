@@ -1,3 +1,7 @@
+## 1.3.1
+
+- Update changelog
+
 ## 1.3.0
 
 - Added `modalBarrierColor` property to in order to add a custom background color when zoomed. Thanks @gonzalogauto!
