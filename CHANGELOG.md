@@ -1,3 +1,7 @@
+## 1.3.2
+
+- Made package compatible with stable channel
+
 ## 1.3.1
 
 - Update changelog
