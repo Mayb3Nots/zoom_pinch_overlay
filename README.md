@@ -27,6 +27,8 @@ ZoomOverlay(
     animationCurve: Curves.fastOutSlowIn, // Defaults to fastOutSlowIn which mimics IOS instagram behavior
     animationDuration: Duration(milliseconds: 300), // Defaults to 100 Milliseconds. Recommended duration is 300 milliseconds for Curves.fastOutSlowIn
     twoTouchOnly: true, // Defaults to false
+    onScaleStart: () {}, // optional VoidCallback
+    onScaleStop: () {}, // optional VoidCallback
     child: CachedNetworkImage(
         imageUrl: imageUrl,
     ),

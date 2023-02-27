@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onScaleStart: () {
                 debugPrint('zooming!');
               }, // optional
-              onScaleEnd: () {
+              onScaleStop: () {
                 debugPrint('zooming ended!');
               }, // optional
               child: CachedNetworkImage(

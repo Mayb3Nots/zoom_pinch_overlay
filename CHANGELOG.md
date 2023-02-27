@@ -1,6 +1,6 @@
 ## 1.3.3
 
-- Added `onScaleStart` and `onScaleEnd` VoidCallbacks
+- Added `onScaleStart` and `onScaleStop` VoidCallbacks
 
 ## 1.3.2
 

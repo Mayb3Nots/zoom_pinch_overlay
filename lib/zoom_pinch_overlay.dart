@@ -52,7 +52,7 @@ class ZoomOverlay extends StatefulWidget {
     this.animationCurve = Curves.fastOutSlowIn,
     this.modalBarrierColor,
     this.onScaleStart,
-    this.onScaleEnd,
+    this.onScaleStop,
   }) : super(key: key);
 
   /// A widget to make zoomable.
@@ -81,7 +81,7 @@ class ZoomOverlay extends StatefulWidget {
 
   /// add callback functions
   final VoidCallback? onScaleStart;
-  final VoidCallback? onScaleEnd;
+  final VoidCallback? onScaleStop;
 
   @override
   _ZoomOverlayState createState() => _ZoomOverlayState();
@@ -216,8 +216,8 @@ class _ZoomOverlayState extends State<ZoomOverlay>
       ..reset()
       ..forward();
 
-    // call end callback function after the animation ends
-    widget.onScaleEnd?.call();
+    // call end callback function after everything else
+    widget.onScaleStop?.call();
   }
 
   Widget _build(BuildContext context) {
