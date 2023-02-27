@@ -53,6 +53,12 @@ class _MyHomePageState extends State<MyHomePage> {
               twoTouchOnly: true,
               animationDuration: Duration(milliseconds: 300),
               animationCurve: Curves.fastOutSlowIn,
+              onScaleStart: () {
+                debugPrint('zooming!');
+              }, // optional
+              onScaleEnd: () {
+                debugPrint('zooming ended!');
+              }, // optional
               child: CachedNetworkImage(
                   imageUrl: 'https://picsum.photos/800?image=$image')),
           Padding(

@@ -1,3 +1,7 @@
+## 1.3.3
+
+- Added `onScaleStart` and `onScaleEnd` VoidCallbacks
+
 ## 1.3.2
 
 - Made package compatible with stable channel
