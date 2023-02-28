@@ -51,6 +51,8 @@ class ZoomOverlay extends StatefulWidget {
     this.animationDuration = const Duration(milliseconds: 100),
     this.animationCurve = Curves.fastOutSlowIn,
     this.modalBarrierColor,
+    this.onScaleStart,
+    this.onScaleStop,
   }) : super(key: key);
 
   /// A widget to make zoomable.
@@ -76,6 +78,10 @@ class ZoomOverlay extends StatefulWidget {
 
   /// Specifies the color of the modal barrier that shows in the background.
   final Color? modalBarrierColor;
+
+  /// add callback functions
+  final VoidCallback? onScaleStart;
+  final VoidCallback? onScaleStop;
 
   @override
   _ZoomOverlayState createState() => _ZoomOverlayState();
@@ -137,6 +143,9 @@ class _ZoomOverlayState extends State<ZoomOverlay>
     //Dont start the effect if the image havent reset complete.
     if (_controllerReset.isAnimating) return;
     if (widget.twoTouchOnly && _touchCount < 2) return;
+
+    // call start callback before everything else
+    widget.onScaleStart?.call();
     _startFocalPoint = details.focalPoint;
 
     _matrix = Matrix4.identity();
@@ -206,6 +215,9 @@ class _ZoomOverlayState extends State<ZoomOverlay>
     _controllerReset
       ..reset()
       ..forward();
+
+    // call end callback function after everything else
+    widget.onScaleStop?.call();
   }
 
   Widget _build(BuildContext context) {
