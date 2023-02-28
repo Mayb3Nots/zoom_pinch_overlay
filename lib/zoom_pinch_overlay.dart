@@ -216,7 +216,7 @@ class _ZoomOverlayState extends State<ZoomOverlay>
       ..reset()
       ..forward();
 
-    // call end callback function after everything else
+    // call end callback function when scale ends
     widget.onScaleStop?.call();
   }
 

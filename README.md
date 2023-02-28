@@ -46,6 +46,8 @@ ZoomOverlay(
 | `animationDuration` | Specifies the duration when the zoom has ended and is animating back to it's original place. Defaults to `Duration(milliseconds: 100)` |
 | `animationCurve`    | Specifies the curve when the zoom has ended and is animating back to it's original place. Defaults to `Curves.fastOutSlowIn`           |
 | `modalBarrierColor` | Specifies the color of the background of the modal barrier.                                                                            |
+| `onScaleStart`      | Function that gets called when scaling of the widget starts.                                                                           |
+| `onScaleStop`       | Function that gets called when scaling of the widget stops.                                                                            |
 
 ## Medium blog post
 

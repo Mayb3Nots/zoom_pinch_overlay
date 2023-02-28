@@ -1,6 +1,7 @@
 ## 1.3.3
 
-- Added `onScaleStart` and `onScaleStop` VoidCallbacks
+- Upgraded dependencies and flutter version
+- Added `onScaleStart` and `onScaleStop` VoidCallbacks. Thanks to [@ramtinq]('https://github.com/ramtinq')
 
 ## 1.3.2
 
