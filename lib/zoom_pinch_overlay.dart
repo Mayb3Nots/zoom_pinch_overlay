@@ -111,7 +111,7 @@ class _ZoomOverlayState extends State<ZoomOverlay>
 
     _controllerReset
       ..addListener(() {
-        _transformWidget.currentState!.setMatrix(_animationReset.value);
+        _transformWidget.currentState?.setMatrix(_animationReset.value);
       })
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) hide();
