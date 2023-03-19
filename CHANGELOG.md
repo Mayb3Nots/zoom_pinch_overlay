@@ -1,3 +1,6 @@
+## 1.4.1
+
+- Fixed null check exception on certain edge case
 ## 1.4.0
 
 - Upgraded dependencies and flutter version
