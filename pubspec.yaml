@@ -14,3 +14,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+screenshots:
+  - description: 'Showcase of the zoom_pinch_overlay package'
+    path: demo.gif
