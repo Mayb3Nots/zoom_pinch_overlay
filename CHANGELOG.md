@@ -1,3 +1,7 @@
+## 1.4.1+1
+
+- Added screenshots to pub.dev
+
 ## 1.4.1
 
 - Fixed null check exception on certain edge case
