@@ -31,6 +31,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  // this is used to enable and disable scroll of the listview
+  // we can disable the listview scroll if the number of touch is 2 or more
+  // this will trigger zoom if the image is touched with two finger.
+  bool isZooming = false;
+
   Widget listRow(int profile, int image, int likes, String name, String text) {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
               modalBarrierColor: Colors.black12, // optional
               minScale: 0.5, // optional
               maxScale: 3.0, // optional
-              twoTouchOnly: true,
+              twoTouchOnly: false,
               animationDuration: Duration(milliseconds: 300),
               animationCurve: Curves.fastOutSlowIn,
               onScaleStart: () {
@@ -59,6 +65,11 @@ class _MyHomePageState extends State<MyHomePage> {
               onScaleStop: () {
                 debugPrint('zooming ended!');
               }, // optional
+              onTouchCountChanged: (count) {
+                setState(() {
+                  isZooming = count > 1;
+                });
+              },
               child: CachedNetworkImage(
                   imageUrl: 'https://picsum.photos/800?image=$image')),
           Padding(
@@ -129,6 +140,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontSize: 38)),
             systemOverlayStyle: SystemUiOverlayStyle.dark),
         body: ListView(
+          // this disables the scroll which makes it easier for image to zoom.
+          physics: isZooming ? NeverScrollableScrollPhysics() : ScrollPhysics(),
           children: <Widget>[
             listRow(1027, 1062, 36, 'mary.porter',
                 'Lucy doesnt want to get out of bed today, its far too cold for the little darling.'),
