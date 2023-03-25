@@ -1,3 +1,6 @@
+## 1.4.1+2
+
+- Made screenshots file size smaller
 ## 1.4.1+1
 
 - Added screenshots to pub.dev
