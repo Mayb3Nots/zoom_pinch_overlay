@@ -5,7 +5,7 @@
 
 An instagram style pinch and zoom widget for all platform completely written in pure dart!
 
-![](https://github.com/Mayb3Nots/zoom_pinch_overlay/blob/master/demo.gif)
+![](https://github.com/Mayb3Nots/zoom_pinch_overlay/blob/master/demo.webp)
 
 All other "zoom_pinch" package didn't work for me because it doesnt appear on top of all other widgets which
 was an issue on one of my project. This package solves that problem by introducing a OverlayEntry so that it appears on top

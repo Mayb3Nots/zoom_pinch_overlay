@@ -1,3 +1,7 @@
+## 1.4.2+3
+
+- Converted demo gif to webp
+
 ## 1.4.1+2
 
 - Made screenshots file size smaller
@@ -11,7 +15,7 @@
 ## 1.4.0
 
 - Upgraded dependencies and flutter version
-- Added `onScaleStart` and `onScaleStop` VoidCallbacks. Thanks to [@ramtinq]('https://github.com/ramtinq')
+- Added `onScaleStart` and `onScaleStop` VoidCallbacks. Thanks to @ramtinq
 
 ## 1.3.2
 
