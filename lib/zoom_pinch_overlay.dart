@@ -46,6 +46,7 @@ class ZoomOverlay extends StatefulWidget {
     Key? key,
     this.twoTouchOnly = false,
     required this.child,
+    this.buildContextOverlayState,
     this.minScale,
     this.maxScale,
     this.animationDuration = const Duration(milliseconds: 100),
@@ -58,6 +59,9 @@ class ZoomOverlay extends StatefulWidget {
   /// A widget to make zoomable.
   final Widget child;
 
+  /// A [BuildContext] to use as the overlay state.
+  final BuildContext? buildContextOverlayState;
+
   ///  Specifies the minimum multiplier it can scale outwards.
   final double? minScale;
 
@@ -68,7 +72,7 @@ class ZoomOverlay extends StatefulWidget {
   ///  Defaults to false.
   final bool twoTouchOnly;
 
-  /// Specifies the animation duartion when the widget zoom has ended and is
+  /// Specifies the animation duration when the widget zoom has ended and is
   /// animating back to the original place.
   final Duration animationDuration;
 
@@ -239,7 +243,9 @@ class _ZoomOverlayState extends State<ZoomOverlay>
 
   Future<void> show() async {
     if (!_isZooming) {
-      final overlayState = Overlay.of(context);
+      final overlayState = Overlay.of(
+        widget.buildContextOverlayState ?? context,
+      );
       _overlayEntry = OverlayEntry(builder: _build);
       overlayState.insert(_overlayEntry!);
     }
