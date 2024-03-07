@@ -16,5 +16,5 @@ dev_dependencies:
     sdk: flutter
 
 screenshots:
-  - description: 'Showcase of the zoom_pinch_overlay package'
+  - description: "Showcase of the zoom_pinch_overlay package"
     path: demo.webp

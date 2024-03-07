@@ -1,3 +1,9 @@
+## 1.4.3
+
+- Added `buildContextOverlayState` parameter to override default Overlay's state. Thanks to @santiagoduc0s
+- Updated dependencies
+
+
 ## 1.4.2+3
 
 - Converted demo gif to webp

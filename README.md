@@ -48,6 +48,7 @@ ZoomOverlay(
 | `modalBarrierColor` | Specifies the color of the background of the modal barrier.                                                                            |
 | `onScaleStart`      | Function that gets called when scaling of the widget starts.                                                                           |
 | `onScaleStop`       | Function that gets called when scaling of the widget stops.                                                                            |
+| `buildContextOverlayState` | Overrides the default overlay state.                                                                                            |
 
 ## Medium blog post
 
